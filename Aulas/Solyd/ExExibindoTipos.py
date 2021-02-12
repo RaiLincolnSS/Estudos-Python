@@ -1,7 +1,7 @@
 nome = "Rafael"
 idade = 24
-altura = 1.78
-peso = 70
+altura = 1.82
+peso = 68
 
 tipo_nome = type(nome)
 tipo_idade = type(idade)
