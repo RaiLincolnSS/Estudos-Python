@@ -1,2 +1,2 @@
 # Estudos-Python
-As aulas do curso da SOLYD e do Gustavo Guanabara
+As aulas do curso da SOLYD, Gustavo Guanabara e Desec Security
