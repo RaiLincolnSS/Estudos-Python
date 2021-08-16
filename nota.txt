@@ -1,0 +1,17 @@
+pep8 (Documentação python)
+Dev Aprender (Python classes)
+Otávio Miranda
+Solyd
+Curso em video
+Desec
+
+
+
+
+%s = string (str)
+%i = inteiro (int)
+%d = decimal (int)
+%f = float
+
+sys permite argumentos 
+os permite comandos do so

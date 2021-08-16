@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Fri Jun 18 21:00:34 2021 as: nmap -sV -sS -D RND:5 -p- -A -O -v --script vuln -oN tall.txt 186.215.125.145
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Unknown address family 0 in build_packet.
+QUITTING!
