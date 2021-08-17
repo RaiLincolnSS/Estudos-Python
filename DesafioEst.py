@@ -25,4 +25,4 @@ pe.print_info()
 # E pôr em risco a integridade, confidencialidade ou a disponibilidade da aplicação.
 
 # Github do autor Rafael C. Almeida.
-# https://github.com/BlackCyber21/Estudos-Python/DesafioEst.py
+# https://raw.githubusercontent.com/BlackCyber21/Estudos-Python/main/DesafioEst.py
