@@ -24,4 +24,5 @@ pe.print_info()
 # De execução de um software, um usuário mal intencionado pode injetar códigos
 # E pôr em risco a integridade, confidencialidade ou a disponibilidade da aplicação.
 
-# Github do autor @BlackCyber21.
+# Github do autor Rafael C. Almeida.
+# https://github.com/BlackCyber21/Estudos-Python/DesafioEst.py
